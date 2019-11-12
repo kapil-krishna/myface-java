@@ -1,10 +1,48 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+
 <head>
-    <title>Home Page :: My🙂Face</title>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/posts"><strong>Posts</strong></a>
+        <a href="/users">Users</a>
+    </nav>
+    <title>Create post :: My🙂Face</title>
 </head>
 
 <body>
-<h1>Create Post Page</h1>
+<h1>Create new post</h1>
+<section class="create-post">
+    <h2>Fill out the form below to create a new post:</h2>
+    <form th:action="@{/posts/create}" method="post">
+            <label for ="usernameFrom">Username from</label>
+            <br>
+        <select id="usernameFrom">
+            <option th:each="user : ${model.users}" th:value="${user.id}" th:text="${user.displayName}"></option>
+        </select>
+            <br>
+            <br>
+            <label for ="usernameTo">Username to</label>
+            <br>
+        <select id="usernameTo">
+            <option th:each="user : ${model.users}" th:value="${user.id}" th:text="${user.displayName}"></option>
+        </select>
+            <br>
+            <br>
+            <label for ="image">Image</label>
+            <br>
+            <input id="image" type="text" name="image">
+            <br>
+            <br>
+            <label for ="message">Message</label>
+            <br>
+            <input id="message" type="text" name="message">
+            <br>
+            <br>
+            <span><!-- spacer --></span>
+            <input type="submit" value="Submit" />
+    </form>
+</section>
 </body>
 </html>

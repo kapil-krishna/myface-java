@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Home Page :: My🙂Face</title>
+</head>
+
+<body>
+<h1>User Page</h1>
+
+<form th:action="@{/books/update-book}" method="post">
+    <fieldset class="book-details">
+        <legend>Book details:</legend>
+        <br>
+        Title:<br>
+        <input type="hidden" name="id" th:value="${model.book.id}">
+        <input type="text" name="title" th:value="${model.book.title}">
+        <br>
+        <br>
+        Author:<br>
+        <input type="text" name="author" th:value="${model.book.author}">
+        <br>
+        <br>
+        ISBN:<br>
+        <input type="text" name="isbn" th:value="${model.book.isbn}">
+        <br>
+        <br>
+        Cover:<br>
+        <input type="text" name="coverURL" th:value="${model.book.coverURL}">
+        <br>
+        <img th:src="${model.book.coverURL}" align="right" class="bookImage">
+        <br>
+        <input type="submit" value="Change details">
+    </fieldset>
+</form>
+</body>
+</html>

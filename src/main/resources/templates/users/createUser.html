@@ -1,10 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+
 <head>
-    <title>Home Page :: My🙂Face</title>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/posts"><strong>Posts</strong></a>
+        <a href="/users">Users</a>
+    </nav>
+    <title>Create user :: My🙂Face</title>
 </head>
 
 <body>
-<h1>Create User Page</h1>
+<h1>Create new user</h1>
+<section class="create-user">
+    <h2>Fill out the form below to register a new user:</h2>
+    <form th:action="@{/users/create}" method="post">
+        <label for ="username">Username</label>
+        <br>
+        <input id="username" type="text" name="username">
+        <br>
+        <br>
+        <label for ="email">Email</label>
+        <br>
+        <input id="email" type="text" name="email">
+        <br>
+        <br>
+        <label for ="firstName">First Name</label>
+        <br>
+        <input id="firstName" type="text" name="firstName">
+        <br>
+        <br>
+        <label for ="lastName">Last Name</label>
+        <br>
+        <input id="lastName" type="text" name="lastName">
+        <br>
+        <br>
+        <label for ="profileImg">Profile photo</label>
+        <br>
+        <input id="profileImg" type="text" name="profileImage">
+        <br>
+        <br>
+        <label for ="bannerImg">Banner image</label>
+        <br>
+        <input id="bannerImg" type="text" name="bannerImage">
+        <br>
+        <br>
+        <span><!-- spacer --></span>
+        <input type="submit" value="Submit" />
+    </form>
+</section>
 </body>
 </html>

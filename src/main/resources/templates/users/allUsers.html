@@ -1,10 +1,25 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+
 <head>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/posts">Posts</a>
+        <a href="/users"><strong>Users</strong></a>
+    </nav>
     <title>Home Page :: My🙂Face</title>
 </head>
 
 <body>
 <h1>All Users Page</h1>
+<section th:each="user : ${model.users}">
+    <div class="card">
+        <h4><p th:text="${user.username}">Username</p></h4>
+        <img th:src="${user.profileImage}" class="profileImage"></p>
+        <p th:text="${user.firstName} + | ${user.lastName}">Name</p>
+    </div>
+</section>
+
 </body>
 </html>

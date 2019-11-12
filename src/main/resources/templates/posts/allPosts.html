@@ -1,10 +1,27 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns:th="http://www.thymeleaf.org">
+
+
 <head>
-    <title>Home Page :: My🙂Face</title>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/posts"><strong>Posts</strong></a>
+        <a href="/users">Users</a>
+    </nav>
+    <title>All Posts :: My🙂Face</title>
 </head>
 
 <body>
 <h1>All Posts Page</h1>
+<section>
+    <ol th:each="post : ${model.posts}">
+        <h4><span th:text="${post.sender.displayName}">Sender Name</span>
+            <span th:text=" to">To</span>
+            <span th:text="${post.receiver.displayName}">Receiver Name</span>
+        </h4>
+        <img th:src="${post.image}" class="postImage"></p>
+        <p th:text="${post.message}">Message</p>
+    </ol>
+</section>
 </body>
 </html>
