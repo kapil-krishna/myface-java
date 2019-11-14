@@ -1,16 +1,13 @@
 @use 'general';
+@use 'navbar';
 
 .all-users {
-    box-sizing: border-box;
-    text-align: center;
-    width: 100%;
-    font-family: general.$main-font;
+    @include general.standardTable
 }
 
-@media all and (min-width: 1000px) {
-    .all-users {
-        width: 920px;
-        margin: auto;
-        }
-
+.list {
+    li {
+        border-radius: 20px;
+        text-align: center;
+    }
 }

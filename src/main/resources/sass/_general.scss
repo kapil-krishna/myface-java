@@ -1,6 +1,11 @@
-$main-font: Arial;
+$main-font: 'Raleway', sans-serif;
 $main-color: #9ef7d8e3;
 $sub-color: #9ef7d8e3;
+$max-content-width: 920px;
+
+body {
+    background-color: #fbfbf0;
+}
 
 h1 {
     font-family: $main-font;
@@ -26,6 +31,7 @@ h1 {
         margin: 10px;
         text-align: justify;
         border-style: solid;
+        border-radius: 5px;
 
         p {
             font-size: 14px;
@@ -37,6 +43,21 @@ h1 {
         display:block;
         width:100%;
         }
+}
+
+@mixin standardWidth {
+    @media all and (min-width: 1000px) {
+        width: 920px;
+        margin: auto;
+    }
+}
+
+@mixin standardTable {
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    font-family: $main-font;
+    @include standardWidth;
 }
 
 

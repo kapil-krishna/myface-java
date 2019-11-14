@@ -4,16 +4,17 @@
 
 <head>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="/css/styles/navbar.css"/>
-    <link rel="stylesheet" href="/css/styles/allPosts.css"/>
+    <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles/allPosts.css"/>
+
     <title>All Posts :: My🙂Face</title>
 </head>
 
 <body>
 
 <header>
-    <nav th:insert="fragments/navbar.html :: navbar(pageName='all_posts')"></nav>
+    <nav th:replace="fragments/navbar.html :: navbar(pageName='all_posts')"></nav>
 </header>
 
 <h1>All Posts</h1>
