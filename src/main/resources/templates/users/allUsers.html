@@ -1,24 +1,26 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 
 <head>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/posts">Posts</a>
-        <a href="/users"><strong>Users</strong></a>
-    </nav>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/styles/navbar.css"/>
     <title>Home Page :: My🙂Face</title>
 </head>
 
 <body>
-<h1>All Users Page</h1>
-<section th:each="user : ${model.users}">
-    <div class="card">
-        <h4><p th:text="${user.username}">Username</p></h4>
-        <img th:src="${user.profileImage}" class="profileImage"></p>
-        <p th:text="${user.firstName} + | ${user.lastName}">Name</p>
-    </div>
+<header>
+    <nav th:insert="fragments/navbar.html :: navbar(pageName='all_users')"></nav>
+</header>
+<h1>All Users</h1>
+<section class="all-users">
+    <ul class="list">
+        <li th:each="user : ${model.users}">
+        <h4><span th:text="${user.username}">Username</span></h4>
+        <img th:src="${user.profileImage}" class="profileImage" alt="profile image"></p>
+        <span th:text="${user.firstName} + | ${user.lastName}">Name</span>
+        </li>
+    </ul>
 </section>
 
 </body>

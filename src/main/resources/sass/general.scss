@@ -1,0 +1,42 @@
+$main-font: Arial;
+$main-color: #9ef7d8e3;
+$sub-color: #9ef7d8e3;
+
+h1 {
+    font-family: $main-font;
+    text-align: center;
+    }
+
+.list {
+    display:flex;
+    width: 100%;
+    justify-content: center;
+    flex-direction: reverse-row;
+    flex-wrap: wrap;
+    padding-inline-start: 0px;
+    list-style: none;
+    margin-right: 5px;
+
+    h4 {
+        text-align: center;
+        }
+
+    li {
+        width: 280px;
+        margin: 10px;
+        text-align: justify;
+        border-style: solid;
+
+        p {
+            font-size: 14px;
+            width:97%;
+            margin-inline-start: 3px;
+            }
+        }
+    img {
+        display:block;
+        width:100%;
+        }
+}
+
+

@@ -1,27 +1,36 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 
 <head>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/posts"><strong>Posts</strong></a>
-        <a href="/users">Users</a>
-    </nav>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/styles/navbar.css"/>
+    <link rel="stylesheet" href="/css/styles/allPosts.css"/>
+    <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
     <title>All Posts :: My🙂Face</title>
 </head>
 
 <body>
-<h1>All Posts Page</h1>
-<section>
-    <ol th:each="post : ${model.posts}">
+
+<header>
+    <nav th:insert="fragments/navbar.html :: navbar(pageName='all_posts')"></nav>
+</header>
+
+<h1>All Posts</h1>
+
+<section class="all-posts">
+    <ul class="list">
+        <li th:each="post : ${model.posts}">
         <h4><span th:text="${post.sender.displayName}">Sender Name</span>
             <span th:text=" to">To</span>
             <span th:text="${post.receiver.displayName}">Receiver Name</span>
         </h4>
-        <img th:src="${post.image}" class="postImage"></p>
+        <img th:src="${post.image}" class="postImage" alt="post image"></p>
         <p th:text="${post.message}">Message</p>
-    </ol>
+        </li>
+    </ul>
 </section>
+
 </body>
+
 </html>

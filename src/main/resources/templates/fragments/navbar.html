@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+
+<nav th:fragment="navbar (pageName)">
+    <a href="/">
+        <strong th:if="${pageName == 'home'}">Home</strong>
+        <span th:unless="${pageName == 'home'}">Home</span>
+    </a>
+    <a href="/posts">
+        <strong th:if="${pageName == 'all_posts'}">All Posts</strong>
+        <span th:unless="${pageName == 'all_posts'}">All Posts</span>
+    </a>
+    <a href="/posts/create">
+        <strong th:if="${pageName == 'create_post'}">Create a Post</strong>
+        <span th:unless="${pageName == 'create_post'}">Create a Post</span>
+    </a>
+    <a href="/users">
+        <strong th:if="${pageName == 'all_users'}">All Users</strong>
+        <span th:unless="${pageName == 'all_users'}">All Users</span>
+    </a>
+    <a href="/users/create">
+        <strong th:if="${pageName == 'create_user'}">Create a User</strong>
+        <span th:unless="${pageName == 'create_user'}">Create a User</span>
+    </a>
+</nav>

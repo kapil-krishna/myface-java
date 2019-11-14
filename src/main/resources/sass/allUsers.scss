@@ -1,0 +1,16 @@
+@use 'general';
+
+.all-users {
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    font-family: general.$main-font;
+}
+
+@media all and (min-width: 1000px) {
+    .all-users {
+        width: 920px;
+        margin: auto;
+        }
+
+}

@@ -1,0 +1,16 @@
+@use 'general';
+
+.all-posts {
+    box-sizing: border-box;
+    text-align: center;
+    width: 100%;
+    font-family: general.$main-font;
+}
+
+@media all and (min-width: 1000px) {
+    .all-posts {
+        width: 920px;
+        margin: auto;
+        }
+
+}

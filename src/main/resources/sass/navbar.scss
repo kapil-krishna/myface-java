@@ -1,0 +1,36 @@
+@use 'general';
+
+$nav-font: Arial;
+
+nav {
+    border-radius: 15px;
+    width: 100%;
+
+    display: inline-block;
+    background: general.$sub-color;
+    background-color: general.$main-color;
+    padding: 15px 0;
+
+    font-family: $nav-font;
+    text-align: center;
+    font-size: 15px;
+    color: black;
+
+    a {
+        text-color: black;
+        margin: 5px;
+        text-decoration: none;
+        align-self: center;
+        line-height: 2;
+        &:hover {
+            color: white;
+            }
+        }
+    }
+
+@media all and (min-width: 1000px) {
+    nav {
+        width: 950px;
+        font-size: 20px;
+    }
+}

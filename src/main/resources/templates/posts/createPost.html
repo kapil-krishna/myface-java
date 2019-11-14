@@ -1,17 +1,17 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 
 
 <head>
-    <nav>
-        <a href="/">Home</a>
-        <a href="/posts"><strong>Posts</strong></a>
-        <a href="/users">Users</a>
-    </nav>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/css/styles/navbar.css"/>
     <title>Create post :: My🙂Face</title>
 </head>
 
 <body>
+<header>
+    <nav th:insert="fragments/navbar.html :: navbar(pageName='create_post')"></nav>
+</header>
 <h1>Create new post</h1>
 <section class="create-post">
     <h2>Fill out the form below to create a new post:</h2>
