@@ -6,50 +6,101 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles/createUser.css"/>
+
     <title>Create user :: My🙂Face</title>
+
+    <script>
+
+        function trim(str) {
+            return str.replace(/^\s+|\s+$/g, '');
+            }
+
+        function checkIfFormIsValid(event) {
+            event.preventDefault();
+
+            var form_username = document.getElementById("username");
+            if (trim(form_username.value) == '') {
+                document.getElementById("error-message-username").innerHTML = "Please enter a username";
+                document.getElementById("error-message-username").style.display = "block";
+                return false;
+            }
+            
+            
+            // document.getElementById("error-message-username").style.display = "hidden";
+            var form_email = document.getElementById("email");
+            if (trim(form_email.value) == '') {
+                document.getElementById("error-message-email").innerHTML = "Please enter an email address";
+                document.getElementById("error-message-email").style.display = "block";
+                return false;
+            }
+
+            var form_firstName = document.getElementById("firstName");
+            if (trim(form_firstName.value) == '') {
+                document.getElementById("error-message-firstName").innerHTML = "Please enter your first name";
+                document.getElementById("error-message-firstName").style.display = "block";
+                return false;
+            }
+
+            var form_lastName = document.getElementById("lastName");
+            if (trim(form_lastName.value) == '') {
+                document.getElementById("error-message-lastName").innerHTML = "Please enter your last name";
+                document.getElementById("error-message-lastName").style.display = "block";
+                return false;
+            }
+
+            return true;
+        }
+    </script>
 </head>
 
 <body>
-<header>
-    <nav th:insert="fragments/navbar.html :: navbar(pageName='create_user')"></nav>
-</header>
-<h1>Create new user</h1>
-<section class="create-user">
-    <h2>Fill out the form below to register a new user:</h2>
-    <form th:action="@{/users/create}" method="post">
-        <label for ="username">Username</label>
-        <br>
-        <input id="username" type="text" name="username">
-        <br>
-        <br>
-        <label for ="email">Email</label>
-        <br>
-        <input id="email" type="text" name="email">
-        <br>
-        <br>
-        <label for ="firstName">First Name</label>
-        <br>
-        <input id="firstName" type="text" name="firstName">
-        <br>
-        <br>
-        <label for ="lastName">Last Name</label>
-        <br>
-        <input id="lastName" type="text" name="lastName">
-        <br>
-        <br>
-        <label for ="profileImg">Profile photo</label>
-        <br>
-        <input id="profileImg" type="text" name="profileImage">
-        <br>
-        <br>
-        <label for ="bannerImg">Banner image</label>
-        <br>
-        <input id="bannerImg" type="text" name="bannerImage">
-        <br>
-        <br>
-        <span><!-- spacer --></span>
-        <input type="submit" value="Submit" />
-    </form>
-</section>
+
+    <header>
+        <nav th:replace="fragments/navbar.html :: navbar(pageName='create_user')"></nav>
+    </header>
+
+    <h1>Create new user</h1>
+    <section class="create-user">
+        <h2>Fill out the form below to register a new user:</h2>
+        <form th:action="@{/users/create}" method="post" onsubmit="checkIfFormIsValid(event)">
+            <label for ="username">Username*</label>
+            <br>
+            <input id="username" type="text" name="username">
+            <p id="error-message-username"></p>
+            <br>
+            <label for ="email">Email*</label>
+            <br>
+            <input id="email" type="email" name="email">
+            <p id="error-message-email" ></p>
+            <br>
+            <label for ="firstName">First Name*</label>
+            <br>
+            <input id="firstName" type="text" name="firstName">
+            <p id="error-message-firstName"></p>
+            <br>
+            <label for ="lastName">Last Name*</label>
+            <br>
+            <input id="lastName" type="text" name="lastName">
+            <p id="error-message-lastName"></p>
+            <br>
+            <label for ="profileImg">Profile photo</label>
+            <br>
+            <input id="profileImg" type="text" name="profileImage">
+            <br>
+            <br>
+    <!--        <img th:src="profileImg" class="profile-image-preview" alt="profile image preview">-->
+            <label for ="bannerImg">Banner image</label>
+            <br>
+            <input id="bannerImg" type="text" name="bannerImage">
+            <br>
+            <br>
+            <br>
+            <span><!-- spacer --></span>
+            <input id="submit" type="submit" value="Submit">
+        </form>
+    </section>
 </body>
+
 </html>
+

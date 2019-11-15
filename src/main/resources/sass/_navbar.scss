@@ -3,7 +3,7 @@
 $nav-font: 'McLaren', cursive;
 
 nav {
-    border-radius: 15px;
+    border-radius: 25px;
     background-color: general.$main-color;
     padding: 15px 0;
 
@@ -11,14 +11,14 @@ nav {
     text-align: center;
 
     a {
-        color: black;
-        margin: 5px;
+        color: mintcream;
+        margin: 10px;
         text-decoration: none;
         line-height: 2;
         font-size: 15px;
 
         &:hover {
-            color: white;
+            color: black;
         }
     }
 

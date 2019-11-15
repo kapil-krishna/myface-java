@@ -6,19 +6,21 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Raleway&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=McLaren&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="/css/styles/navbar.css"/>
+    <link rel="stylesheet" href="/css/styles/index.css"/>
+
     <title>Home Page :: My🙂Face</title>
 </head>
 
 <body>
+
 <header>
-    <nav th:insert="fragments/navbar.html :: navbar(pageName='home')"></nav>
+    <nav th:replace="fragments/navbar.html :: navbar(pageName='home')"></nav>
 </header>
 
 
     <h1>Home Page</h1>
 
-<section>Welcome to MyFace a.k.a. FailBook</section>
+<section><p>Welcome to MyFace a.k.a. FailBook</p></section>
 
 
 

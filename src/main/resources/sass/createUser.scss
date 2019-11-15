@@ -1,0 +1,10 @@
+@use 'general';
+@use 'navbar';
+
+.create-user {
+    font-family: general.$main-font;
+
+    p {
+        @include general.formError;
+    }
+}
